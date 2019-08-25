@@ -4,17 +4,7 @@ import { useMediaPredicate } from 'react-media-hook';
 import { GridContainer, InputBox, Flex, Button } from '../components/commons';
 import Logo from '../components/images/logo.png';
 import { Colors, Typography, Breakpoints } from '../themes';
-
-const SignUpTitle = styled.h1`
-  grid-column: 2/12;
-  height: 28px;
-  margin-bottom: 35px;
-  ${{ ...Typography['style-1'] }}
-  
-  @media ${Breakpoints.sm} {
-    text-align: center;
-  }
-`;
+import { HelperText, TitleText, SignUpInputBox } from '../components/SignUp';
 
 const LogoContainer = styled(Flex)`
   grid-column: 2/12;
@@ -45,7 +35,7 @@ const ButtonGridPosition = styled.div`
 
 const BigScreenBox = styled.div`
   @media ${Breakpoints.sm} {
-    width: 600px;
+    width: 530px;
     height: 670px;
     border-color: ${Colors.grey};
     border-width: 1px;
@@ -63,15 +53,6 @@ const BigScreenContainer = styled.div`
   }
 `;
 
-const HelperText = styled.p`
-  grid-column: 2/12;
-  margin-top: 10px;
-  ${{ ...Typography['style-4'] }};
-  @media ${Breakpoints.sm} {
-    grid-column: 3/11;
-  }
-`;
-
 const SignUpPage = () => {
   const biggerThanSmallScreen = useMediaPredicate(`(${Breakpoints.sm})`);
   return (
@@ -81,42 +62,34 @@ const SignUpPage = () => {
           <LogoContainer>
             <img src={Logo} alt="Company Logo" />
           </LogoContainer>
-          <SignUpTitle>Create your Diabeetus Account</SignUpTitle>
-          <InputBox
+          <TitleText text="Create your Diabeetus Account" />
+          <SignUpInputBox
             placeholderText="First Name"
-            gridColumn={biggerThanSmallScreen ? '3/7' : '2/12'}
-            marginTop="25px"
+            isAlwaysFullLengthField={false}
+            isFirstHalf
           />
-          <InputBox
+          <SignUpInputBox
             placeholderText="Last Name"
-            gridColumn={biggerThanSmallScreen ? '7/11' : '2/12'}
-            marginTop="25px"
+            isAlwaysFullLengthField={false}
+            isFirstHalf={false}
           />
-          <InputBox
-            placeholderText="Username"
-            gridColumn={biggerThanSmallScreen ? '3/11' : '2/12'}
-            marginTop="25px"
-          />
-          <HelperText>You can use letters, numbers & periods</HelperText>
-          <InputBox
+          <SignUpInputBox placeholderText="Username" />
+          <HelperText text="You can use letters, numbers & periods" />
+          <SignUpInputBox
             placeholderText="Password"
-            gridColumn={biggerThanSmallScreen ? '3/7' : '2/12'}
-            marginTop="25px"
+            isAlwaysFullLengthField={false}
+            isFirstHalf
           />
           {!biggerThanSmallScreen && (
-            <HelperText>
-              Use 8 or more characters with a mix of letters, numbers & symbols
-            </HelperText>
+            <HelperText text="Use 8 or more characters with a mix of letters, numbers & symbols" />
           )}
-          <InputBox
+          <SignUpInputBox
             placeholderText="Confirm"
-            gridColumn={biggerThanSmallScreen ? '7/11' : '2/12'}
-            marginTop="25px"
+            isAlwaysFullLengthField={false}
+            isFirstHalf={false}
           />
           {biggerThanSmallScreen && (
-            <HelperText>
-              Use 8 or more characters with a mix of letters, numbers & symbols
-            </HelperText>
+            <HelperText text="Use 8 or more characters with a mix of letters, numbers & symbols" />
           )}
           <ButtonGridPosition>
             <StyledButton text="Confirm" />

@@ -1,14 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { GridColumn, GridContainer, Overlay } from '../components/commons';
-
-const NO_OF_COLUMNS = 12;
-
-const renderGridColumns = () => {
-  return Array.from(Array(NO_OF_COLUMNS)).map(index => (
-    <GridColumn key={index} />
-  ));
-};
+import { GridContainer, Overlay } from '../components/commons';
+import { renderGridColumns } from '../components/GridLayout';
 
 const EdgeToEdgeGrid = ({ isInactive }) => {
   return (

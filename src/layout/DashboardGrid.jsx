@@ -1,14 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import {
-  GridColumn,
-  GridContainer,
-  Overlay,
-  Flex,
-} from '../components/commons';
-
-const NO_OF_COLUMNS = 12;
+import { GridContainer, Overlay, Flex } from '../components/commons';
+import { renderGridColumns } from '../components/GridLayout';
 
 const DashboardGridContainer = styled(GridContainer)`
   max-width: 1250px;
@@ -19,10 +13,6 @@ const DashboardGridContainer = styled(GridContainer)`
   bottom: 0;
   left: 0;
 `;
-
-const renderGridColumns = () => {
-  return Array.from(Array(NO_OF_COLUMNS)).map(_ => <GridColumn />);
-};
 
 const DashboardGrid = ({ isInactive }) => {
   return (
