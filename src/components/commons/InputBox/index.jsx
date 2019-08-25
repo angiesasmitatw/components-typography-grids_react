@@ -33,5 +33,4 @@ InputBox.propTypes = {
 
 InputBox.defaultProps = {
   marginTop: '0px',
-  width: '100px',
 };
