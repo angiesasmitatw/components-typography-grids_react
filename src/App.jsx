@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 import DashboardGrid from './layout/DashboardGrid';
 import EdgeToEdgeGrid from './layout/EdgeToEdgeGrid';
 import PageController from './layout/PageController';
