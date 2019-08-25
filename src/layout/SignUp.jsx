@@ -7,6 +7,11 @@ import Product from '../components/images/product.png';
 import { Colors, Typography, Breakpoints } from '../themes';
 import { HelperText, TitleText, SignUpInputBox } from '../components/SignUp';
 
+const SignUpTitleLabel = 'Create your Diabeetus Account';
+const PasswordHelperLabel =
+  'Use 8 or more characters with a mix of letters, numbers & symbols';
+const UsernameHelperLabel = 'You can use letters, numbers & periods';
+
 const LogoContainer = styled(Flex)`
   grid-column: 2/12;
   margin-top: 25px;
@@ -91,7 +96,7 @@ const SignUpPage = () => {
             <LogoContainer>
               <img src={Logo} alt="Company Logo" />
             </LogoContainer>
-            <TitleText text="Create your Diabeetus Account" />
+            <TitleText text={SignUpTitleLabel} />
             <SignUpInputBox
               placeholderText="First Name"
               isAlwaysFullLengthField={false}
@@ -103,23 +108,21 @@ const SignUpPage = () => {
               isFirstHalf={false}
             />
             <SignUpInputBox placeholderText="Username" />
-            <HelperText text="You can use letters, numbers & periods" />
+            <HelperText text={UsernameHelperLabel} />
             <SignUpInputBox
               placeholderText="Password"
               isAlwaysFullLengthField={false}
               isFirstHalf
             />
             {!biggerThanSmallScreen && (
-              <HelperText text="Use 8 or more characters with a mix of letters, numbers & symbols" />
+              <HelperText text={PasswordHelperLabel} />
             )}
             <SignUpInputBox
               placeholderText="Confirm"
               isAlwaysFullLengthField={false}
               isFirstHalf={false}
             />
-            {biggerThanSmallScreen && (
-              <HelperText text="Use 8 or more characters with a mix of letters, numbers & symbols" />
-            )}
+            {biggerThanSmallScreen && <HelperText text={PasswordHelperLabel} />}
             <ButtonGridPosition>
               <StyledButton text="Confirm" />
             </ButtonGridPosition>
