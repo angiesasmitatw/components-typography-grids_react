@@ -5,7 +5,9 @@ import { GridColumn, GridContainer, Overlay } from '../components/commons';
 const NO_OF_COLUMNS = 12;
 
 const renderGridColumns = () => {
-  return Array.from(Array(NO_OF_COLUMNS)).map(_ => <GridColumn />);
+  return Array.from(Array(NO_OF_COLUMNS)).map(index => (
+    <GridColumn key={index} />
+  ));
 };
 
 const EdgeToEdgeGrid = ({ isInactive }) => {

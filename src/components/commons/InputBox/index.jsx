@@ -7,6 +7,7 @@ const StyledInput = styled.input`
   ${props => props.gridColumn && `grid-column: ${props.gridColumn}`}
   height: 30px;
   ${margin}
+  padding-left: 10px;
 `;
 
 const InputBox = ({ gridColumn, placeholderText, marginTop }) => (
