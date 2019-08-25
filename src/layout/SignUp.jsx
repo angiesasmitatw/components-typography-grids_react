@@ -27,11 +27,16 @@ const LogoContainer = styled(Flex)`
 
 const StyledButton = styled(Button)`
   background-color: ${Colors.green};
-  grid-column-end: 12;
   width: 120px;
   height: 40px;
   border: none;
   ${{ ...Typography['style-3'] }}
+`;
+
+const ButtonGridPosition = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  grid-column: 7/12;
 `;
 
 const SignUpPage = () => (
@@ -45,7 +50,9 @@ const SignUpPage = () => (
     <InputBox placeholderText="Username" gridColumn="2/12" marginTop="15px" />
     <InputBox placeholderText="Password" gridColumn="2/12" marginTop="15px" />
     <InputBox placeholderText="Confirm" gridColumn="2/12" marginTop="15px" />
-    <StyledButton text="Confirm" />
+    <ButtonGridPosition>
+      <StyledButton text="Confirm" />
+    </ButtonGridPosition>
   </GridContainer>
 );
 
