@@ -7,7 +7,7 @@ This is a Web Front-end code to demonstrate building highly scalable components 
 ![Demo](src/components/images/ScreenResposiveDemo.gif)
 
 # Demo
-Go to [this site](https://components-grids-typography.herokuapp.com/) example to run demo
+Go to [this Heroku App](https://components-grids-typography.herokuapp.com/) to see sign-up page in action
 
 # Running Application In Development Mode
 
